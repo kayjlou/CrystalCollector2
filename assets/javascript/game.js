@@ -11,6 +11,7 @@ var wins = 0;
 var score = 0;
 var losses = 0;
 let goal = Math.floor(Math.random() * 100) + 40;
+let isWon = false;
 
 //Function to get random value
 getRand = (max, min) => {
@@ -85,11 +86,13 @@ reset = () => {
 addScore = buttonName => {
   //Grab value of button that is clicked
   score += parseInt(buttonName.getAttribute("value"));
-  // console.log(`The value is ${buttonName.getAttribute("value")}`);
-  // console.log(score);
   //display in html
+  if (score === goal) {
+    check();
+  } else if (score > goal) {
+    check();
+  }
   document.querySelector("#score").innerHTML = score;
-  
 };
 
 check = () => {
