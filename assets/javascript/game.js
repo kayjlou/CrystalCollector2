@@ -38,9 +38,7 @@ createBtns = () => {
 };
 
 init = () => {
-  // getNum();
   createBtns();
-  // check();
 };
 //Initialize game
 init();
@@ -49,31 +47,40 @@ init();
 document.addEventListener("click", e => {
   //Checks id of button
   console.log(e.target.id);
-  // name = e.target.id;
 
   switch (e.target.id) {
     case "btn0":
       addScore(btn0);
-      check();
+      // check();
       break;
 
     case "btn1":
       addScore(btn1);
-      check();
+      // check();
       break;
 
     case "btn2":
       addScore(btn2);
-      check();
+      // check();
       break;
 
     case "btn3":
       addScore(btn3);
-      check();
+      // check();
+      break;
+
+    default:
       break;
   }
 });
 
+reset = () => {
+  let goal = Math.floor(Math.random() * 100) + 40;
+  document.querySelector("#score").innerHTML = "";
+  document.querySelector("#update").innerHTML =
+    "Click a crystal to uncover each value.See if you can reach the goal!";
+  document.querySelector("#goal").innerHTML = goal;
+};
 //Function to add crystal value to score
 addScore = buttonName => {
   //Grab value of button that is clicked
@@ -82,20 +89,20 @@ addScore = buttonName => {
   // console.log(score);
   //display in html
   document.querySelector("#score").innerHTML = score;
+  
 };
 
 check = () => {
   if (score === goal) {
-    // console.log("YOU WON!!!");
+    console.log("YOU WON!!!");
     wins++;
-    document.querySelector("#update").innerHTML = "OMG YOU WON!!!";
     document.querySelector("#wins").innerHTML = wins;
+    reset();
   } else if (score > goal) {
-    // console.log("YOU LOSE");
+    console.log("YOU LOSE");
     losses++;
     document.querySelector("#losses").innerHTML = losses;
-    document.querySelector("#update").innerHTML = "YOU LOST!!!";
-    // reset()
+    reset();
   } else {
     // console.log("Keep going");
     document.querySelector("#update").innerHTML = "Keep clicking";
