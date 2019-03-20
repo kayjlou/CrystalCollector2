@@ -18,13 +18,6 @@ getRand = (max, min) => {
   return Math.floor(Math.random() * max) + min;
 };
 
-//Assign values to the buttons and goals
-// getNum = () => {
-//   // let goal = getRand(80, 20);
-//   console.log("The goal is " + goal);
-//   document.querySelector("#goal").innerHTML = goal;
-// };
-
 //Function that creates the buttons dynamically on page
 createBtns = () => {
   for (let i = 0; i < 4; i++) {
@@ -41,33 +34,35 @@ createBtns = () => {
 init = () => {
   createBtns();
 };
+
 //Initialize game
 init();
 
 //Add event listener to page to check if crystal is clicked
 document.addEventListener("click", e => {
+  check();
   //Checks id of button
   console.log(e.target.id);
 
   switch (e.target.id) {
     case "btn0":
       addScore(btn0);
-      // check();
+      check();
       break;
 
     case "btn1":
       addScore(btn1);
-      // check();
+      check();
       break;
 
     case "btn2":
       addScore(btn2);
-      // check();
+      check();
       break;
 
     case "btn3":
       addScore(btn3);
-      // check();
+      check();
       break;
 
     default:
@@ -77,24 +72,27 @@ document.addEventListener("click", e => {
 
 reset = () => {
   let goal = Math.floor(Math.random() * 100) + 40;
+  console.log(goal);
   document.querySelector("#score").innerHTML = "";
   document.querySelector("#update").innerHTML =
     "Click a crystal to uncover each value.See if you can reach the goal!";
   document.querySelector("#goal").innerHTML = goal;
 };
+
 //Function to add crystal value to score
 addScore = buttonName => {
   //Grab value of button that is clicked
   score += parseInt(buttonName.getAttribute("value"));
   //display in html
-  if (score === goal) {
-    check();
-  } else if (score > goal) {
-    check();
-  }
+  // if (score === goal) {
+  //   check();
+  // } else if (score > goal) {
+  //   reset();
+  // }
   document.querySelector("#score").innerHTML = score;
 };
 
+//Function checks if player won or lost
 check = () => {
   if (score === goal) {
     console.log("YOU WON!!!");
