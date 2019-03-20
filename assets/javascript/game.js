@@ -40,7 +40,6 @@ init();
 
 //Add event listener to page to check if crystal is clicked
 document.addEventListener("click", e => {
-  check();
   //Checks id of button
   console.log(e.target.id);
 
@@ -70,10 +69,12 @@ document.addEventListener("click", e => {
   }
 });
 
+//Function to reset goal number
 reset = () => {
+  let score = 0;
   let goal = Math.floor(Math.random() * 100) + 40;
   console.log(goal);
-  document.querySelector("#score").innerHTML = "";
+  document.querySelector("#score").innerHTML = score;
   document.querySelector("#update").innerHTML =
     "Click a crystal to uncover each value.See if you can reach the goal!";
   document.querySelector("#goal").innerHTML = goal;
