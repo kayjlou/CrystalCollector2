@@ -76,7 +76,7 @@ reset = () => {
   console.log(goal);
   document.querySelector("#score").innerHTML = score;
   document.querySelector("#update").innerHTML =
-    "Click a crystal to uncover each value.See if you can reach the goal!";
+    "Click a crystal to uncover each value.See if you can reach the goal!";r
   document.querySelector("#goal").innerHTML = goal;
 };
 
