@@ -27,7 +27,7 @@ h1 {
   padding: 30px;
   text-align: center;
   /* background-color: whitesmoke; */
-  width: 50%;
+  width: ;
   margin-bottom: 10px;
   margin: auto;
   font-size: 20px;
@@ -47,7 +47,7 @@ h4 {
   display: grid;
   grid-gap: 10px;
   margin-top: 20px;
-  grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+  grid-template-columns: 20% 60% 20%;
   margin: auto;
   /* width: 500px; */
   text-align: center;
@@ -55,7 +55,7 @@ h4 {
 
 .goal {
   margin: auto;
-  grid-column: 3/4;
+  grid-column: 2/3;
   padding: 20px;
   width: 100px;
   font-size: 25px;
@@ -64,23 +64,38 @@ h4 {
 }
 
 .game-info {
-  grid-column: 3/ 4;
+  grid-column: 2/ 3;
   background-color: whitesmoke;
   padding: 15px;
+  width: 30%;
+  align-self: center;
+  justify-self: center
 }
 
 .images {
   height: 100px;
   width: 600px;
   padding: 30px;
-  margin: auto;
+   align-self: center;
+  justify-self: center;
+  grid-column: 2/3;
 }
 
 .crystals {
   height: 100%;
-  width: 90px;
-  border: 5px skyblue solid;
+  /* width: 90px; */
+  border: 5px black solid;
   padding: 10px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   background-color: white;
+}
+
+#restart{
+  padding: 15px;
+  width: 100px;
+  border: 5px skyblue solid;
+  border-radius: 25px;
+  grid-column: 2/3;
+  align-self: center;
+  justify-self: center
 }
